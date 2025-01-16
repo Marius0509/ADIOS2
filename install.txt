@@ -1,0 +1,10 @@
+git clone https://github.com/ornladios/ADIOS2.git
+cd ADIOS2
+mkdir build
+cd build
+cmake .. -DADIOS2_USE_MPI=ON -DCMAKE_INSTALL_PREFIX=/usr/local
+make -j$(nproc)
+sudo make install
+export PATH=/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+bpls --help
